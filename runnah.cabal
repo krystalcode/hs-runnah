@@ -1,0 +1,70 @@
+cabal-version:       3.12
+name:                runnah
+version:             0.1.0.0
+synopsis:            A tool for running containers in development environments.
+description:         Please see README.md.
+license:             GPL-3.0-only
+license-file:        LICENSE
+author:              Dimitris Bozelos
+maintainer:          Dimitris Bozelos <dbozelos@gmail.com>
+copyright:           2024 Dimitris Bozelos
+category:            Development
+build-type:          Simple
+extra-doc-files:     README.md
+                     CHANGELOG.md
+tested-with:         GHC == 8.8.3
+
+common common-options
+  build-depends:       base ^>= 4.13.0.0
+
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Widentities
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+  if impl(ghc >= 8.0)
+    ghc-options:       -Wredundant-constraints
+  if impl(ghc >= 8.2)
+    ghc-options:       -fhide-source-paths
+  if impl(ghc >= 8.4)
+    ghc-options:       -Wmissing-export-lists
+                       -Wpartial-fields
+  if impl(ghc >= 8.8)
+    ghc-options:       -Wmissing-deriving-strategies
+
+  default-language:    Haskell2010
+
+library
+  import:              common-options
+  hs-source-dirs:      src
+  exposed-modules:     Runnah
+
+executable runnah
+  import:              common-options
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  build-depends:       runnah
+  ghc-options:         -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+
+test-suite runnah-test
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Spec.hs
+  build-depends:       runnah
+  ghc-options:         -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
+
+benchmark runnah-benchmark
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      benchmark
+  main-is:             Main.hs
+  build-depends:       gauge
+                     , runnah
+  ghc-options:         -threaded
+                       -rtsopts
+                       -with-rtsopts=-N
