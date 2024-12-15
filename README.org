@@ -3,8 +3,8 @@
 Under active development - no release yet.
 
 [[https://hackage.haskell.org/package/runnah][file:https://img.shields.io/hackage/v/runnah.svg?logo=haskell]]
-[[https://stackage.org/lts/package/runnah][file:https://stackage.org/package/runnah/badge/lts]]
-[[https://stackage.org/nightly/package/runnah][file:https://stackage.org/package/runnah/badge/nightly]]
+[[https://stackage.org/lts/package/runnah][https://stackage.org/package/runnah/badge/lts]]
+[[https://stackage.org/nightly/package/runnah][https://stackage.org/package/runnah/badge/nightly]]
 [[LICENSE][https://img.shields.io/badge/license-GPL--3.0--only-blue.svg]]
 
 A tool for running containerized applications in development environments.
