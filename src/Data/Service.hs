@@ -17,6 +17,8 @@ module Data.Service
 
 -- | Imports.
 
+import GHC.Generics (Generic)
+
 import qualified Data.Text as T (Text)
 
 -------------------------------------------------------------------------------

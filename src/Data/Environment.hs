@@ -17,6 +17,8 @@ module Data.Environment
 
 -- | Imports.
 
+import GHC.Generics (Generic)
+
 import qualified Data.Text as T (Text)
 
 -------------------------------------------------------------------------------

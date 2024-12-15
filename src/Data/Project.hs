@@ -15,6 +15,8 @@ module Data.Project
 
 -- | Imports.
 
+import GHC.Generics (Generic)
+
 import qualified Data.Text as T (Text)
 
 -------------------------------------------------------------------------------
