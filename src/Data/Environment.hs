@@ -1,9 +1,15 @@
 {-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
 
--- | Functions and types for environments.
--- An environment provides the context within which a project runs. A project
--- can have multiple environments sharing common configuration and variables,
--- each having its own overrides as well.
+{- |
+Copyright: (c) 2024 Dimitris Bozelos
+SPDX-License-Identifier: GPL-3.0-only
+Maintainer: Dimitris Bozelos <dbozelos@gmail.com>
+
+Functions and types for environments.
+An environment provides the context within which a project runs. A project can
+have multiple environments sharing common configuration and variables, each
+having its own overrides as well.
+-}
 
 module Data.Environment
   ( Environment(..)

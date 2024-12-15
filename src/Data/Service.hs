@@ -1,8 +1,15 @@
 {-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
 
--- | Functions and types for services.
--- A service represents a specific program that runs in a container. A project
--- can have multiple services.
+{- |
+Copyright: (c) 2024 Dimitris Bozelos
+SPDX-License-Identifier: GPL-3.0-only
+Maintainer: Dimitris Bozelos <dbozelos@gmail.com>
+
+Functions and types for services.
+A service represents a specific program that runs in a container. A project can
+have multiple services.
+-}
 
 module Data.Service
   ( Service(..)

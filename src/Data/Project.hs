@@ -1,7 +1,13 @@
 {-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
 
--- | Functions and types for projects.
--- A project represents a collection of services that run in a pod.
+{- |
+Copyright: (c) 2024 Dimitris Bozelos
+SPDX-License-Identifier: GPL-3.0-only
+Maintainer: Dimitris Bozelos <dbozelos@gmail.com>
+
+Functions and types for projects.
+A project represents a collection of services that run in a pod.
+-}
 
 module Data.Project
   ( Project(..)
