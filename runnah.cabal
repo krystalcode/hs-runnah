@@ -40,6 +40,7 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wmissing-deriving-strategies -fhide-source-paths
   build-depends:
       base >=4.7 && <5
+    , filepath
     , iris >=0.1.0.0
     , mtl
     , optparse-applicative
@@ -57,6 +58,7 @@ executable runnah
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wmissing-deriving-strategies -fhide-source-paths -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , filepath
     , iris >=0.1.0.0
     , mtl
     , optparse-applicative
@@ -76,6 +78,7 @@ test-suite runnah-test
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wmissing-deriving-strategies -fhide-source-paths -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , filepath
     , iris >=0.1.0.0
     , mtl
     , optparse-applicative
@@ -95,6 +98,7 @@ benchmark runnah-benchmark
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -Wmissing-deriving-strategies -fhide-source-paths -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       base >=4.7 && <5
+    , filepath
     , gauge
     , iris >=0.1.0.0
     , mtl
