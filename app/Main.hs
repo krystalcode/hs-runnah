@@ -16,17 +16,18 @@ module Main (main) where
 
 -- | Imports.
 
-import Runnah (someFunc)
+import qualified Data.Codec as Codec
 
 import Control.Monad.IO.Class (MonadIO (..))
 import Control.Monad.Reader (MonadReader)
 import System.FilePath
 
 import qualified Data.Text as T (Text, pack)
-import qualified Data.Text.IO as T (putStrLn, readFile)
+import qualified Data.Text.IO as T (putStrLn)
 import qualified Iris
 import qualified Options.Applicative as O
 import qualified Paths_runnah as Autogen
+import qualified Toml
 
 -- | Entrypoint.
 
@@ -35,16 +36,22 @@ main = Iris.runCliApp appSettings $ unApp app
 
 app :: App ()
 app = do
-    Config{..} <- Iris.asksCliEnv Iris.cliEnvCmd
+  Config{..} <- Iris.asksCliEnv Iris.cliEnvCmd
 
-    fileContent <- getFileContent (projectPath </> projectFile)
-
-    output fileContent
+  result <- Toml.decodeFileEither Codec.config (projectPath </> projectFile)
+  case result of
+    Left  errors -> liftIO $ (T.putStrLn $ Toml.prettyTomlDecodeErrors errors)
+    Right config -> liftIO $ (T.putStrLn $ Toml.encode Codec.config config)
 
 -------------------------------------------------------------------------------
 -- Data types.
 -------------------------------------------------------------------------------
 
+-- @I Rename to Options
+--    type     : task
+--    priority : low
+--    labels   : cli, config, readability
+--    notes    : To avoid confusion with Data.Config.
 data Config = Config
   { projectPath :: FilePath
   , projectFile :: FilePath
@@ -64,12 +71,6 @@ newtype App a = App
 -------------------------------------------------------------------------------
 -- Internal functions.
 -------------------------------------------------------------------------------
-
-getFileContent :: FilePath -> App T.Text
-getFileContent = liftIO . T.readFile
-
-output :: T.Text -> App ()
-output fileContent = liftIO $ T.putStrLn fileContent
 
 {-
   @I Support loading option values from environment variables, where applicable
@@ -110,7 +111,7 @@ parser = do
     projectFile <- O.strOption $ mconcat
         [ O.long "project-file"
         , O.metavar "FILE_PATH"
-        , O.value "runnah.yaml"
+        , O.value "runnah.toml"
         , O.showDefault
         , O.help "The name of the project configuration file"
         ]

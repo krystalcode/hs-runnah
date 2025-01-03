@@ -29,6 +29,7 @@ dependencies:
   - mtl
   - optparse-applicative
   - text
+  - tomland >= 1.3.3.3
 
 # GHC options (if any) common to all components:
 ghc-options:

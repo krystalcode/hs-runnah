@@ -27,6 +27,8 @@ source-repository head
 
 library
   exposed-modules:
+      Data.Codec
+      Data.Config
       Data.Environment
       Data.Project
       Data.Service
@@ -45,6 +47,7 @@ library
     , mtl
     , optparse-applicative
     , text
+    , tomland >=1.3.3.3
   default-language: Haskell2010
 
 executable runnah
@@ -64,6 +67,7 @@ executable runnah
     , optparse-applicative
     , runnah
     , text
+    , tomland >=1.3.3.3
   default-language: Haskell2010
 
 test-suite runnah-test
@@ -84,6 +88,7 @@ test-suite runnah-test
     , optparse-applicative
     , runnah
     , text
+    , tomland >=1.3.3.3
   default-language: Haskell2010
 
 benchmark runnah-benchmark
@@ -105,4 +110,5 @@ benchmark runnah-benchmark
     , optparse-applicative
     , runnah
     , text
+    , tomland >=1.3.3.3
   default-language: Haskell2010
