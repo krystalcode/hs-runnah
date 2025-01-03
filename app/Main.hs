@@ -1,3 +1,5 @@
+{-# OPTIONS -Wno-unused-top-binds #-}
+
 {-# LANGUAGE ApplicativeDo #-}
 {-# LANGUAGE DerivingStrategies #-}
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
