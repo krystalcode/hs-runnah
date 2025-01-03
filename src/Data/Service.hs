@@ -1,5 +1,4 @@
-{-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
-{-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric, DerivingStrategies, OverloadedStrings #-}
 
 {- |
 Copyright: (c) 2024 Dimitris Bozelos
@@ -33,6 +32,6 @@ import qualified Data.Text as T (Text)
 data Service = Service
   -- The unique identifier of the service within the project.
   { id :: T.Text
-  } deriving (Generic, Show)
   -- The human-friendly name of the service.
   , name :: Maybe T.Text
+  } deriving stock (Generic, Show)

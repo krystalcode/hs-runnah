@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric, DerivingStrategies, OverloadedStrings #-}
 
 {- |
 Copyright: (c) 2024 Dimitris Bozelos
@@ -33,6 +33,6 @@ import qualified Data.Text as T (Text)
 data Environment = Environment
   -- The unique identifier of the environment within the project.
   { id :: T.Text
-  } deriving (Generic, Show)
   -- The human-friendly name of the environment.
   , name :: Maybe T.Text
+  } deriving stock (Generic, Show)

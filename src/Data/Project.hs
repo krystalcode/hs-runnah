@@ -1,4 +1,4 @@
-{-# LANGUAGE DeriveGeneric, OverloadedStrings #-}
+{-# LANGUAGE DeriveGeneric, DerivingStrategies, OverloadedStrings #-}
 
 {- |
 Copyright: (c) 2024 Dimitris Bozelos
@@ -51,4 +51,4 @@ data Project = Project
   , name :: Maybe T.Text
   -- The filesystem path of the directory where the project is located.
   , path  :: FilePath
-  } deriving (Generic, Show)
+  } deriving stock (Generic, Show)
