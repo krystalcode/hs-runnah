@@ -48,7 +48,7 @@ data Project = Project
   -- The unique identifier of the project within the host/user.
   { id :: T.Text
   -- The human-friendly label of the project.
-  , label :: T.Text
+  , label :: Maybe T.Text
   -- The filesystem path of the directory where the project is located.
   , path  :: FilePath
   } deriving (Generic, Show)

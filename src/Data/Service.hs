@@ -34,5 +34,5 @@ data Service = Service
   -- The unique identifier of the service within the project.
   { id :: T.Text
   -- The human-friendly label of the service.
-  , label :: T.Text
   } deriving (Generic, Show)
+  , label :: Maybe T.Text

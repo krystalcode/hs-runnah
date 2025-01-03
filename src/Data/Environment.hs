@@ -34,5 +34,5 @@ data Environment = Environment
   -- The unique identifier of the environment within the project.
   { id :: T.Text
   -- The human-friendly label of the environment.
-  , label :: T.Text
   } deriving (Generic, Show)
+  , label :: Maybe T.Text
