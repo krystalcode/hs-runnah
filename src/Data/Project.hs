@@ -50,5 +50,17 @@ data Project = Project
   -- The human-friendly name of the project.
   , name :: Maybe T.Text
   -- The filesystem path of the directory where the project is located.
-  , path  :: FilePath
+  -- A project should always have a directory. We have made optional since it is
+  -- optional in the configuration file and it would make it more complicate to
+  -- pass the path from the CLI options to the Toml codec before constructing
+  -- the project. Also, it may be optional anyways in the long run when we
+  -- support remote project using, for example, the Podman API. We therefore
+  -- keep it as optional and we should be merging in the path provided by the
+  -- CLI options.
+  --
+  -- @I Merge CLI `project-path` option into the path field
+  --    type     : improvement
+  --    priority : low
+  --    labels   : config, project
+  , path :: Maybe FilePath
   } deriving stock (Generic, Show)
