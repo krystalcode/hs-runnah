@@ -33,6 +33,6 @@ import qualified Data.Text as T (Text)
 data Environment = Environment
   -- The unique identifier of the environment within the project.
   { id :: T.Text
-  -- The human-friendly label of the environment.
   } deriving (Generic, Show)
-  , label :: Maybe T.Text
+  -- The human-friendly name of the environment.
+  , name :: Maybe T.Text

@@ -47,8 +47,8 @@ import qualified Data.Text as T (Text)
 data Project = Project
   -- The unique identifier of the project within the host/user.
   { id :: T.Text
-  -- The human-friendly label of the project.
-  , label :: Maybe T.Text
+  -- The human-friendly name of the project.
+  , name :: Maybe T.Text
   -- The filesystem path of the directory where the project is located.
   , path  :: FilePath
   } deriving (Generic, Show)

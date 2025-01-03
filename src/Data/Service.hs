@@ -33,6 +33,6 @@ import qualified Data.Text as T (Text)
 data Service = Service
   -- The unique identifier of the service within the project.
   { id :: T.Text
-  -- The human-friendly label of the service.
   } deriving (Generic, Show)
-  , label :: Maybe T.Text
+  -- The human-friendly name of the service.
+  , name :: Maybe T.Text
