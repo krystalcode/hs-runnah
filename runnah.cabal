@@ -33,6 +33,11 @@ library
       Data.Project
       Data.Service
       Runnah
+      Runnah.Command
+      Runnah.Command.Build
+      Runnah.Command.Common
+      Runnah.Command.Down
+      Runnah.Command.Up
   other-modules:
       Paths_runnah
   autogen-modules:
